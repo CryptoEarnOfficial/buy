@@ -8,6 +8,182 @@
   <!-- <link rel="stylesheet" href="styl.css"> -->
   <!-- PayPal SDK -->
   <script src="https://www.paypal.com/sdk/js?client-id=AQpAbcby7yS8YwdvLC0hb9lfvlmAirHzIbsSylWsSDUVK6hzwP_Ktr9WCrjRmcPQLIIfcKMNn2n3RlvH&currency=PLN"></script>
+<style>
+      * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url("tlo1.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("tlo1.jpg") center/cover no-repeat;
+      filter: blur(8px);
+      z-index: -1;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      color: white;
+    }
+
+    .logo img {
+      height: 80px;
+    }
+
+    .title {
+      font-family: Impact, sans-serif;
+      font-size: 48px;
+      margin-left: 20px;
+    }
+
+    #payment-container {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 10;
+    }
+
+    #amount {
+      width: 100%;
+      padding: 15px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #000;
+      font-weight: bold;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #amount:focus {
+      outline: none;
+      box-shadow: 0 0 10px #0070ba;
+    }
+
+    #paypal-button-container {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .title {
+        font-size: 32px;
+      }
+
+      #payment-container {
+        width: 95%;
+        padding: 15px;
+        gap: 15px;
+      }
+
+      #amount {
+        font-size: 1rem;
+        padding: 12px;
+      }
+
+      #paypal-button-container > div {
+        transform: scale(0.9);
+        transform-origin: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo img {
+        height: 60px;
+      }
+
+      .title {
+        font-size: 28px;
+      }
+
+      #amount {
+        font-size: 0.95rem;
+      }
+
+      #paypal-button-container > div {
+        transform: scale(0.8);
+      }
+    }
+
+    #crypto-container {
+      max-width: 500px;
+      margin: 50px auto;
+      background-color: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(6px);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    select, input {
+      width: 90%;
+      padding: 12px;
+      margin-top: 15px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+    }
+
+    #wallet-section {
+      margin-top: 20px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    input[type="text"] {
+      background-color: #fff;
+      color: #000;
+    }
+
+    footer {
+      height: 200px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(3px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 1rem;
+      margin-top: 40px;
+    }
+
+</style>
 </head>
 <body>
 

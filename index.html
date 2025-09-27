@@ -287,13 +287,13 @@
       },
       onApprove: function(data, actions) {
         return actions.order.capture().then(function(details) {
-          alert("Płatność zakończona sukcesem przez: " + details.payer.name.given_name);
-          console.log('Szczegóły płatności:', details);
+          alert("Payment completed successfully by: " + details.payer.name.given_name);
+          console.log('Payment details:', details);
         });
       },
       onError: function(err) {
-        console.error("Błąd płatności:", err);
-        alert("Wystąpił błąd podczas przetwarzania płatności.");
+        console.error("Payment error:", err);
+        alert("An error occurred while processing your payment.");
       }
     }).render("#paypal-button-container");
 
@@ -305,7 +305,7 @@
       const selectedCrypto = this.value;
       if (selectedCrypto) {
         walletSection.style.display = 'flex';
-        walletLabel.textContent = `Wprowadź adres portfela ${selectedCrypto}`;
+        walletLabel.textContent = `Enter your wallet address ${selectedCrypto}`;
       } else {
         walletSection.style.display = 'none';
         walletLabel.textContent = '';
